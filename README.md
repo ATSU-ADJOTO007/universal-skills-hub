@@ -83,7 +83,7 @@ Le hub compare trois états pour chaque Skill installé : la copie de la bibliot
 Prérequis : Windows 10 ou 11, macOS ou Linux, [Node.js](https://nodejs.org) 20 ou plus récent, Git.
 
 ```powershell
-git clone https://github.com/OWNER/universal-skills-hub.git
+git clone https://github.com/ATSU-ADJOTO007/universal-skills-hub.git
 cd universal-skills-hub
 npm install
 npm start

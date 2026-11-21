@@ -18,7 +18,7 @@ git --version
 ## Installation depuis GitHub (méthode recommandée)
 
 ```powershell
-git clone https://github.com/OWNER/universal-skills-hub.git
+git clone https://github.com/ATSU-ADJOTO007/universal-skills-hub.git
 cd universal-skills-hub
 npm install
 npm start

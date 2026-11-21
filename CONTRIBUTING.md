@@ -5,7 +5,7 @@ Merci de votre intérêt. Les contributions sont acceptées par pull request.
 ## Mise en place
 
 ```powershell
-git clone https://github.com/OWNER/universal-skills-hub.git
+git clone https://github.com/ATSU-ADJOTO007/universal-skills-hub.git
 cd universal-skills-hub
 npm install
 ```
