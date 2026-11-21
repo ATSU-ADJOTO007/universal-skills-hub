@@ -1,0 +1,7 @@
+#!/bin/sh
+# Universal Skills Hub - pre-push hook.
+# Runs the full writing check and the secret scan before anything leaves the machine.
+
+node scripts/check-writing.mjs || { echo "Push refusé : caractères interdits détectés."; exit 1; }
+node scripts/check-secrets.mjs || { echo "Push refusé : secret ou fichier sensible détecté."; exit 1; }
+exit 0

@@ -1,0 +1,82 @@
+{
+  "name": "universal-skills-hub",
+  "version": "0.1.0",
+  "description": "Universal manager for AI agent skills. Discover, organize, version, group and synchronize skills across compatible AI agents.",
+  "author": "ADJOTO ATSU AMETEPE BERNARD",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/main/main.js",
+  "keywords": [
+    "agent-skills",
+    "skills",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "cursor",
+    "copilot",
+    "electron",
+    "desktop"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "electron .",
+    "cli": "node src/cli/ush.js",
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:smoke": "node scripts/smoke.mjs",
+    "icon": "node scripts/build-icon.mjs",
+    "check:writing": "node scripts/check-writing.mjs",
+    "check:quality": "node scripts/check-quality.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check": "npm run check:writing && npm run check:secrets && npm test",
+    "hooks:install": "node scripts/install-hooks.mjs",
+    "prepare": "node scripts/install-hooks.mjs",
+    "dist:win": "npm run check && electron-builder --win portable nsis",
+    "dist:dir": "electron-builder --dir"
+  },
+  "dependencies": {
+    "fflate": "0.8.3",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "electron": "45.4.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "io.github.universalskillshub",
+    "productName": "Universal Skills Hub",
+    "copyright": "Copyright (c) ADJOTO ATSU AMETEPE BERNARD",
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json",
+      "LICENSE"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "assets/icon.png",
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "assets/icon.png",
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": [
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

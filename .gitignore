@@ -1,0 +1,31 @@
+# Dependencies and build output
+node_modules/
+dist/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local data: never publish a personal library
+library.json
+history.jsonl
+demo-data/
+smoke*/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+*.tmp

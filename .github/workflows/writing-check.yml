@@ -1,0 +1,37 @@
+name: Writing check
+
+# Independent check of forbidden dashes (U+2014, U+2013).
+# Required status check for the main branch and a gate for releases.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  release:
+    types: [published, created]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  writing:
+    name: Forbidden dashes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # The script has no dependency: nothing is installed.
+      - name: Run check-writing
+        run: node scripts/check-writing.mjs
+      - name: Self test (the check must fail on a forbidden character)
+        run: |
+          mkdir -p /tmp/wc-self-test
+          printf 'bad \xe2\x80\x94 char\n' > /tmp/wc-self-test/x.md
+          if node scripts/check-writing.mjs /tmp/wc-self-test/x.md; then
+            echo "The writing check did not detect a forbidden character."; exit 1
+          fi
+          echo "Self test passed: the check fails as expected."

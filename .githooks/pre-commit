@@ -1,0 +1,14 @@
+#!/bin/sh
+# Universal Skills Hub - pre-commit hook.
+# Blocks the commit when a staged text file contains a forbidden dash.
+# Installed by "npm run hooks:install" (sets core.hooksPath for this repository only).
+
+node scripts/check-writing.mjs --staged
+status=$?
+if [ $status -ne 0 ]; then
+  echo ""
+  echo "Commit refusé par le contrôle rédactionnel."
+  echo "Corrigez les fichiers listés, ou proposez une correction avec : npm run check:writing -- --fix"
+  exit 1
+fi
+exit 0

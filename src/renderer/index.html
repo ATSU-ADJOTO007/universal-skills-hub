@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Universal Skills Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Navigation">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="23" class="mark-ring"/>
+          <path d="M32 9 A23 23 0 0 1 52 21" class="mark-flow"/>
+          <path d="M52 43 A23 23 0 0 1 32 55" class="mark-flow"/>
+          <path d="M12 43 A23 23 0 0 1 12 21" class="mark-flow"/>
+          <circle cx="32" cy="32" r="8.5" class="mark-core"/>
+          <circle cx="32" cy="9" r="5" class="mark-node"/>
+          <circle cx="52" cy="43.5" r="5" class="mark-node"/>
+          <circle cx="12" cy="43.5" r="5" class="mark-node"/>
+        </svg>
+        <div>
+          <div class="brand-name">Universal Skills Hub</div>
+          <div class="brand-tag">Create anywhere. Use everywhere.</div>
+        </div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="sidebar-foot" id="sidebar-foot"></div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <input id="global-search" type="search" autocomplete="off">
+        </div>
+        <div class="topbar-actions" id="topbar-actions"></div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+  <script src="i18n.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

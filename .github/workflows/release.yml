@@ -1,0 +1,45 @@
+name: Release
+
+# Builds Windows packages for a version tag. The release is created only
+# after the writing check, the secret scan and the tests have passed.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/check-writing.mjs
+      - run: node scripts/check-secrets.mjs
+      - run: npm ci
+      - run: npm test
+
+  build-windows:
+    needs: checks
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx electron-builder --win portable nsis --publish never
+      - name: Create GitHub release (draft)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.exe --title "$GITHUB_REF_NAME" --notes-file CHANGELOG.md --draft
