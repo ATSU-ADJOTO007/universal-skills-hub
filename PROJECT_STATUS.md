@@ -97,8 +97,22 @@ Aucun élément bloqué à ce jour.
 
 ## Publication
 
-Voir la section du même nom à la fin de ce fichier, mise à jour après l'envoi sur GitHub.
+Voir la section "Publication (2026-11-22)" à la fin de ce fichier.
 
 ## Prochaine étape
 
 Vérifier l'installation réelle des Skills chez Codex, VS Code / Copilot et Cursor, et ajouter des tests automatisés pour les modes de surveillance.
+
+## Publication (2026-11-22)
+
+| Élément | État vérifié |
+| --- | --- |
+| Dépôt | https://github.com/ATSU-ADJOTO007/universal-skills-hub |
+| Visibilité | public (vérifié par l'API publique GitHub, sans authentification) |
+| Branche par défaut | `main` |
+| Licence détectée par GitHub | MIT |
+| Workflow Writing check | exécuté sur GitHub, succès |
+| Workflow CI (Linux et Windows) | exécuté sur GitHub, succès |
+| Release | non créée ; le workflow Release se déclenche au premier tag `v*` |
+| Protection de branche (statut Writing check obligatoire) | non configurée : nécessite un réglage authentifié dans Settings > Branches du dépôt |
+| Topics GitHub | non configurés : même raison |
