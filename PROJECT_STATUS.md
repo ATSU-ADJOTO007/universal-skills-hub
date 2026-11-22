@@ -115,4 +115,4 @@ Vérifier l'installation réelle des Skills chez Codex, VS Code / Copilot et Cur
 | Workflow CI (Linux et Windows) | exécuté sur GitHub, succès |
 | Release | v0.1.0 publiée le 2026-11-22 (https://github.com/ATSU-ADJOTO007/universal-skills-hub/releases/tag/v0.1.0), avec la version portable et l'installateur Windows construits par le workflow Release |
 | Protection de branche | règle `protect-main` active sur `main` (vérifiée par l'API publique) : statut "Forbidden dashes" obligatoire, suppression et force-push bloqués ; exception "Repository admin" pour permettre les pushes directs du propriétaire |
-| Topics GitHub | non configurés |
+| Section About | description du projet, site web pointant vers la page Releases, 12 topics (`agent-skills`, `ai-agents`, `claude-code`, `codex`, `cursor`, `desktop-app`, `electron`, `github-copilot`, `local-first`, `privacy`, `skills-manager`, `windows`), vérifiés par l'API publique |
