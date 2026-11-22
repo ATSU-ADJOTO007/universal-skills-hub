@@ -15,7 +15,16 @@ npm --version
 git --version
 ```
 
-## Installation depuis GitHub (méthode recommandée)
+## Télécharger la version Windows
+
+La page [Releases](https://github.com/ATSU-ADJOTO007/universal-skills-hub/releases) propose deux fichiers pour chaque version :
+
+- `Universal.Skills.Hub.<version>.exe` : version portable, se lance sans installation ;
+- `Universal.Skills.Hub.Setup.<version>.exe` : installateur (choix du dossier d'installation, désinstallation depuis les Paramètres Windows).
+
+Ces exécutables ne sont pas signés. Au premier lancement, Windows SmartScreen peut afficher un avertissement : choisissez "Informations complémentaires" puis "Exécuter quand même" si le fichier provient bien de la page Releases du dépôt.
+
+## Installation depuis les sources
 
 ```powershell
 git clone https://github.com/ATSU-ADJOTO007/universal-skills-hub.git
@@ -30,7 +39,7 @@ npm start
 - télécharge le binaire Electron ;
 - exécute `scripts/install-hooks.mjs`, qui règle `core.hooksPath` sur `.githooks` dans la configuration locale du dépôt uniquement. La configuration Git globale n'est pas modifiée.
 
-## Version portable Windows
+## Construire les exécutables Windows
 
 Pour produire un exécutable qui se lance sans installation :
 

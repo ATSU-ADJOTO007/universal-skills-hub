@@ -80,7 +80,9 @@ Le hub compare trois états pour chaque Skill installé : la copie de la bibliot
 
 ## Installation
 
-Prérequis : Windows 10 ou 11, macOS ou Linux, [Node.js](https://nodejs.org) 20 ou plus récent, Git.
+Sous Windows, le plus simple est de télécharger la version portable ou l'installateur depuis la page [Releases](https://github.com/ATSU-ADJOTO007/universal-skills-hub/releases).
+
+Depuis les sources : Windows 10 ou 11, macOS ou Linux, [Node.js](https://nodejs.org) 20 ou plus récent, Git.
 
 ```powershell
 git clone https://github.com/ATSU-ADJOTO007/universal-skills-hub.git

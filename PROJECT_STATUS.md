@@ -43,7 +43,7 @@ Statuts utilisés : **terminé et testé** (code écrit et vérifié par un test
 | Surveillance en temps réel (`fs.watch`) et périodique | Code en place, aucun test automatisé. |
 | Synchronisation au démarrage, à chaque modification, périodique | Code en place, aucun test automatisé. |
 | Boîtes de dialogue natives (choix de dossier, confirmation) | Utilisées par l'interface, non pilotées par le test de fumée. |
-| Exécutable portable `.exe` auto-extractible | Construit ; le test de fumée a porté sur le dossier `win-unpacked` qu'il contient. |
+| Exécutables de la release (portable et installateur NSIS) | Construits par GitHub Actions ; non lancés sur une machine à ce jour. |
 | Workflows GitHub Actions | Écrits ; leur exécution sur GitHub est vérifiée après publication (voir "Publication"). |
 
 ## Non vérifié (logiciels tiers)
@@ -75,7 +75,7 @@ Aucun élément bloqué à ce jour.
 
 ## Tests non exécutés
 
-- Installateur NSIS : configuré, non construit ni installé.
+- Installateur NSIS : construit par le workflow Release, non installé à ce jour.
 - Paquets macOS et Linux.
 - Exécution sur Windows 10, macOS et Linux.
 - Tests de charge (bibliothèque de plusieurs milliers de Skills).
@@ -113,6 +113,6 @@ Vérifier l'installation réelle des Skills chez Codex, VS Code / Copilot et Cur
 | Licence détectée par GitHub | MIT |
 | Workflow Writing check | exécuté sur GitHub, succès |
 | Workflow CI (Linux et Windows) | exécuté sur GitHub, succès |
-| Release | non créée ; le workflow Release se déclenche au premier tag `v*` |
+| Release | v0.1.0 publiée le 2026-11-22 (https://github.com/ATSU-ADJOTO007/universal-skills-hub/releases/tag/v0.1.0), avec la version portable et l'installateur Windows construits par le workflow Release |
 | Protection de branche (statut Writing check obligatoire) | non configurée : nécessite un réglage authentifié dans Settings > Branches du dépôt |
 | Topics GitHub | non configurés : même raison |
