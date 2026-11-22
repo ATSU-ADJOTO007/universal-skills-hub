@@ -114,5 +114,5 @@ Vérifier l'installation réelle des Skills chez Codex, VS Code / Copilot et Cur
 | Workflow Writing check | exécuté sur GitHub, succès |
 | Workflow CI (Linux et Windows) | exécuté sur GitHub, succès |
 | Release | v0.1.0 publiée le 2026-11-22 (https://github.com/ATSU-ADJOTO007/universal-skills-hub/releases/tag/v0.1.0), avec la version portable et l'installateur Windows construits par le workflow Release |
-| Protection de branche (statut Writing check obligatoire) | non configurée : nécessite un réglage authentifié dans Settings > Branches du dépôt |
-| Topics GitHub | non configurés : même raison |
+| Protection de branche | règle `protect-main` active sur `main` (vérifiée par l'API publique) : statut "Forbidden dashes" obligatoire, suppression et force-push bloqués ; exception "Repository admin" pour permettre les pushes directs du propriétaire |
+| Topics GitHub | non configurés |

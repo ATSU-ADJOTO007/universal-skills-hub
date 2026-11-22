@@ -74,7 +74,8 @@ Les hooks sont activés par `npm install` (script `prepare`), qui règle `core.h
 ### Limites de la protection
 
 - Un hook local peut être contourné avec `git commit --no-verify`. Le workflow GitHub Actions reste un contrôle indépendant.
-- Pour qu'un échec bloque réellement la fusion sur GitHub, la branche `main` doit exiger le statut **Writing check / Forbidden dashes**. Ce réglage se fait dans **Settings > Branches** ou **Settings > Rules** du dépôt. Voir l'état actuel dans [PROJECT_STATUS.md](../PROJECT_STATUS.md).
+- La branche `main` est protégée par la règle `protect-main` (Settings > Rules) : le statut **Forbidden dashes** doit réussir avant qu'un commit soit accepté sur `main`, et la suppression ainsi que le force-push de `main` sont bloqués.
+- Le rôle **Repository admin** figure dans la liste d'exceptions de cette règle, pour que le propriétaire puisse pousser directement sur `main`. Ses commits passent alors par les hooks locaux et sont contrôlés par le workflow après le push, sans être bloqués à l'avance. Les autres contributeurs doivent passer par une branche ou une pull request dont la vérification réussit.
 
 ## Contrôle des secrets (bloquant)
 
